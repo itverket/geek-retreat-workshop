@@ -22,6 +22,9 @@ Function UpdateConfigFile($resourceGroupName, $workerName, $storageAccountName, 
 	$obj.value = "DefaultEndpointsProtocol=https;AccountName=$storageAccountName;AccountKey=$storageAccountKey";
 	#Save to cscfg
 	$configDoc.Save($cscfgFile)
+	
+	
+	
 }
 
 Function UpdateSearchApiConfig($workerName, $searchApiKey, $searchName, $publishDir){
@@ -39,6 +42,18 @@ Function UpdateSearchApiConfig($workerName, $searchApiKey, $searchName, $publish
 	$obj2.value = $searchName
 	#Save to cscfg
 	$configDoc.Save($cscfgFile)
+	
+		#Read and update config files
+	# $cscfgFile = "$publishDir\ServiceConfiguration.Local.cscfg"
+	# $configDoc = (Get-Content $cscfgFile) -as [Xml]
+	# #Update config
+	# $tmp = $configDoc.ServiceConfiguration.Role | where {$_.name -eq $workerName} 
+	# $obj = $tmp.ConfigurationSettings.Setting | where {$_.name -eq 'SearchApiKey'}
+	# $obj.value = $searchApiKey.ToString()
+	# $obj2 = $tmp.ConfigurationSettings.Setting | where {$_.name -eq 'SearchServiceName'}
+	# $obj2.value = $searchName
+	# #Save to cscfg
+	# $configDoc.Save($cscfgFile)
 }
 
 Function Select-FolderDialog
