@@ -75,7 +75,7 @@
       "location": "North Europe",
       "properties": {
         "name": "[parameters('hostingPlanName')]",
-        "sku": "0",
+        "sku": "Shared",
         "workerSize": "0",
         "numberOfWorkers": 1
       }

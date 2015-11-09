@@ -13,8 +13,7 @@ Param(
 )
 
 if (!$groupname){
-	$groupname = Read-Host "Enter group number or short group name (max 5 characters!)" 
-	$grouptag = $groupname	
+	$groupname = Read-Host "Enter group number or short group name (max 5 characters!)" 	
 }
 	 
 if($groupname.Length -lt 3){
@@ -30,24 +29,36 @@ $deploymentStorageName = $groupname.ToLower() + "deployments"
 $hostingPlanName = $groupname + "HostingPlan"
 $websiteName = $groupname + "Web"
 
-$handlerProjPath = "..\TweetHandlerService\TweetHandlerService.ccproj"
-$publisherProjPath = "..\TweetPublishService\TweetPublishService.ccproj"
+$publisherProjPath = "..\TweetHandlerService\TweetHandlerService.ccproj"
+$handlerProjPath = "..\TweetPublishService\TweetPublishService.ccproj"
 $currentDir = (Get-Item -Path ".\" -Verbose).FullName
 $handlerOutpath = "$currentDir\HandlerOut\"	
 $publisherOutpath = "$currentDir\PublisherOut\"	
 	
 # try{	
 # 	Write-Host "Creating new Azure resource group - $resourceGroupName `n Using template $templateFile"
-# 	. .\Create-GRResourceGroup -groupname $groupname
+# 	Switch-AzureMode -Name AzureResourceManager
+# 	New-AzureResourceGroup -ErrorAction Stop -Name $resourceGroupName -Location "North Europe" -TemplateFile $templateFile `
+# 													-tweetPublishServiceName $tweetPublishServiceName `
+# 													-tweetHandlerServiceName $tweetHandlerServiceName `
+# 													-tweetHandlerStorageAccountName $storageAccountName `
+# 													-searchName $searchName `
+# 													-deploymentStorageName $deploymentStorageName `
+# 													-hostingPlanName $hostingPlanName `
+# 													-websiteName $websiteName
 # }Catch{
 # 	$errorMessage = $_.Exception.Message
 # 	$errorMessage
 # }																										   
-# 
-# 
+
 try{
 	Write-Host "Packaging handler project"						
-	. .\Package-CloudServiceProject -csprojpath $handlerProjPath -out $handlerOutpath
+	msbuild $handlerProjPath /p:Configuration=Release `
+									/p:DebugType=None `
+									/p:Platform=AnyCpu `
+									/p:OutputPath=$handlerOutpath `
+									/p:TargetProfile=Cloud `
+									/t:publish  	
 					
 }Catch{
 	$errorMessage = $_.Exception.Message
@@ -56,21 +67,13 @@ try{
 
 try{
 	Write-Host "Packaging publish project"
-	. .\Package-CloudServiceProject -csprojpath $publisherProjPath -out $publisherOutpath	
+	msbuild $publisherProjPath /p:Configuration=Release `
+									/p:DebugType=None `
+									/p:Platform=AnyCpu `
+									/p:OutputPath=$publisherOutpath `
+									/p:TargetProfile=Cloud `
+									/t:publish  	
 					
-}Catch{
-	$errorMessage = $_.Exception.Message
-	$errorMessage
-}
-
-
-
-$publishDirHandler = ".\HandlerOut\app.publish"
-$publishDirPublisher = ".\PublisherOut\app.publish"
-	
-try{
-	. .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirHandler -workerName "TweetHandler" -storageAccountName $storageAccountName 
-	. .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirPublisher -workerName "TweetrPublisher" -storageAccountName $storageAccountName
 }Catch{
 	$errorMessage = $_.Exception.Message
 	$errorMessage

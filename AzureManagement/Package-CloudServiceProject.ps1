@@ -1,6 +1,8 @@
 [CmdletBinding()]
 Param(
+    [Parameter(Position=1)]
     [string]$csprojpath,
+    [Parameter(Position=1)]
     [string]$outpath = ".\out\"
 
 )

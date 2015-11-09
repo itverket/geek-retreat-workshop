@@ -29,7 +29,7 @@ $hostingPlanName = $groupname + "HostingPlan"
 $websiteName = $groupname + "Web"
 	
 Switch-AzureMode -Name AzureResourceManager
-New-AzureResourceGroup -Name $resourceGroupName -Location "North Europe" -TemplateFile $templateFile `
+New-AzureResourceGroup -ErrorAction Stop -Name $resourceGroupName -Location "North Europe" -TemplateFile $templateFile `
 												-tweetPublishServiceName $tweetPublishServiceName `
 												-tweetHandlerServiceName $tweetHandlerServiceName `
 												-tweetHandlerStorageAccountName $storageAccountName `
