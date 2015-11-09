@@ -34,7 +34,7 @@ Function UpdateSearchApiConfig($workerName, $searchApiKey, $searchName, $publish
 	#Update config
 	$tmp = $configDoc.ServiceConfiguration.Role | where {$_.name -eq $workerName} 
 	$obj = $tmp.ConfigurationSettings.Setting | where {$_.name -eq 'SearchApiKey'}
-	$obj.value = $searchApiKey
+	$obj.value = $searchApiKey.ToString()
 	$obj2 = $tmp.ConfigurationSettings.Setting | where {$_.name -eq 'SearchServiceName'}
 	$obj2.value = $searchName
 	#Save to cscfg

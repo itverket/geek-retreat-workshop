@@ -65,11 +65,12 @@ try{
 
 
 
-$publishDirHandler = ".\HandlerOut\app.publish"
-$publishDirPublisher = ".\PublisherOut\app.publish"
+$publishDirHandler = "$currentDir\HandlerOut\app.publish"
+$publishDirPublisher = "$currentDir\PublisherOut\app.publish"
 	
 try{
-	. .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirHandler -workerName "TweetHandler" -storageAccountName $storageAccountName 
+	. .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirHandler -workerName "TweetHandler" -storageAccountName $storageAccountName
+	. .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirHandler -workerName "TweetIndexWorker" -storageAccountName $storageAccountName -searchName $searchName -s
 	. .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirPublisher -workerName "TweetrPublisher" -storageAccountName $storageAccountName
 }Catch{
 	$errorMessage = $_.Exception.Message

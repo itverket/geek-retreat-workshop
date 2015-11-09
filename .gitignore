@@ -5,8 +5,8 @@
 *.suo
 *.user
 *.sln.docstates
-*HandlerOut/*
-*PublisherOut/*
+HandlerOut/
+PublisherOut/
 
 # Build results
 [Dd]ebug/
