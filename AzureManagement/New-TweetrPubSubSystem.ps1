@@ -45,42 +45,42 @@ $publisherOutpath = "$currentDir\PublisherOut\"
 # }																										   
 # 
 # 
-# try{
-# 	Write-Host "Packaging handler project"						
-# 	. .\Package-CloudServiceProject -csprojpath $handlerProjPath -out $handlerOutpath
-# 					
-# }Catch{
-# 	$errorMessage = $_.Exception.Message
-# 	$errorMessage
-# }
-# 
-# try{
-# 	Write-Host "Packaging publish project"
-# 	. .\Package-CloudServiceProject -csprojpath $publisherProjPath -out $publisherOutpath	
-# 					
-# }Catch{
-# 	$errorMessage = $_.Exception.Message
-# 	$errorMessage
-# }
+try{
+	Write-Host "Packaging handler project"						
+	. .\Package-CloudServiceProject -csprojpath $handlerProjPath -out $handlerOutpath
+					
+}Catch{
+	$errorMessage = $_.Exception.Message
+	$errorMessage
+}
+
+try{
+	Write-Host "Packaging publish project"
+	. .\Package-CloudServiceProject -csprojpath $publisherProjPath -out $publisherOutpath	
+					
+}Catch{
+	$errorMessage = $_.Exception.Message
+	$errorMessage
+}
 
 
 
 $publishDirHandler = "$currentDir\HandlerOut\app.publish"
 $publishDirPublisher = "$currentDir\PublisherOut\app.publish"
 	
-# try{
-# 	Write-Host "1"
-# 	. .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirHandler -workerName "TweetHandler" -storageAccountName $storageAccountName
-# 	Write-Host "1"
-# 	
-# 	. .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirHandler -workerName "SearchIndexWorker" -storageAccountName $storageAccountName -searchName $searchName -s
-# 	Write-Host "1"
-# 	
-# 	. .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirPublisher -workerName "TweetrPublisher" -storageAccountName $storageAccountName
-# }Catch{
-# 	$errorMessage = $_.Exception.Message
-# 	$errorMessage
-# }
+try{
+	Write-Host "1"
+	. .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirHandler -workerName "TweetHandler" -storageAccountName $storageAccountName
+	Write-Host "1"
+	
+	# . .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirHandler -workerName "SearchIndexWorker" -storageAccountName $storageAccountName -searchName $searchName -s
+	# Write-Host "1"
+	# 
+	. .\Set-ProjectCloudConfigurations.ps1 -groupname $grouptag -publishDir $publishDirPublisher -workerName "TweetrPublisher" -storageAccountName $storageAccountName
+}Catch{
+	$errorMessage = $_.Exception.Message
+	$errorMessage
+}
 
 
 $subscription = (Get-AzureSubscription -Current).SubscriptionId
