@@ -12,22 +12,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetrPublisher", "TweetrPublisher\TweetrPublisher.csproj", "{E338C5E0-1180-4967-A74B-D62077C510CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureManagement", "AzureManagement", "{E2567D71-EDA0-43EF-87CD-C4062B63F814}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "publish-scripts", "publish-scripts", "{DDC3CF0F-5C16-4ED0-835E-F1049467E858}"
 	ProjectSection(SolutionItems) = preProject
-		AzureManagement\publish-scripts\Create-GRResourceGroup.ps1 = AzureManagement\publish-scripts\Create-GRResourceGroup.ps1
-		AzureManagement\publish-scripts\Package-CloudServiceProject.ps1 = AzureManagement\publish-scripts\Package-CloudServiceProject.ps1
-		AzureManagement\publish-scripts\Publish-CloudServiceFromPackage.ps1 = AzureManagement\publish-scripts\Publish-CloudServiceFromPackage.ps1
-		AzureManagement\publish-scripts\Set-ProjectCloudConfigurations.ps1 = AzureManagement\publish-scripts\Set-ProjectCloudConfigurations.ps1
-		AzureManagement\publish-scripts\tweet-publish-subscribe.json = AzureManagement\publish-scripts\tweet-publish-subscribe.json
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "resource-manager", "resource-manager", "{373F3F27-7FD1-453E-9D17-2B9F822C1364}"
-	ProjectSection(SolutionItems) = preProject
-		AzureManagement\resource-manager\deploy-webapp.ps1 = AzureManagement\resource-manager\deploy-webapp.ps1
-		AzureManagement\resource-manager\geekretreat-storage-deploy.json = AzureManagement\resource-manager\geekretreat-storage-deploy.json
-		AzureManagement\resource-manager\geekretreat-webapp-deploy.json = AzureManagement\resource-manager\geekretreat-webapp-deploy.json
-		AzureManagement\resource-manager\website.publishproj = AzureManagement\resource-manager\website.publishproj
+		AzureManagement\Create-GRResourceGroup.ps1 = AzureManagement\Create-GRResourceGroup.ps1
+		AzureManagement\New-TweetrPubSubSystem.ps1 = AzureManagement\New-TweetrPubSubSystem.ps1
+		AzureManagement\Package-CloudServiceProject.ps1 = AzureManagement\Package-CloudServiceProject.ps1
+		AzureManagement\Publish-CloudServiceFromPackage.ps1 = AzureManagement\Publish-CloudServiceFromPackage.ps1
+		AzureManagement\Set-ProjectCloudConfigurations.ps1 = AzureManagement\Set-ProjectCloudConfigurations.ps1
+		AzureManagement\tweet-publish-subscribe.json = AzureManagement\tweet-publish-subscribe.json
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Entities.Package", "Entities.Package\Entities.Package.xproj", "{F7ABCD21-E009-4F88-ACD9-6E4DD0978A02}"
@@ -66,9 +57,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{DDC3CF0F-5C16-4ED0-835E-F1049467E858} = {E2567D71-EDA0-43EF-87CD-C4062B63F814}
-		{373F3F27-7FD1-453E-9D17-2B9F822C1364} = {E2567D71-EDA0-43EF-87CD-C4062B63F814}
 	EndGlobalSection
 EndGlobal
