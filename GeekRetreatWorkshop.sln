@@ -28,6 +28,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Entities.Package\global.json = Entities.Package\global.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{FBAFD70E-3334-4004-AD37-79560A8F5CAF}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Search Tutorial 1.docx = Documents\Search Tutorial 1.docx
+		Documents\Tutorial 1-v2.pdf = Documents\Tutorial 1-v2.pdf
+		Documents\Tutorial 1.pdf = Documents\Tutorial 1.pdf
+		Documents\tweetr-system.png = Documents\tweetr-system.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
