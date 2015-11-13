@@ -1,6 +1,8 @@
-Komme igang hurtig med front end:
+Bruke ferdig-implementert, basic frontend (Knockout + Pagerjs)
 
 Dersom du/teamet ønsker, kan dere lime inn følgende filer fra Documents-mappen inn i Web-API prosjektet deres.
+
+FIL -> DESTINATION FOLDER
 
 1.index.html -> wwwroot
 
@@ -29,7 +31,13 @@ Dersom du/teamet ønsker, kan dere lime inn følgende filer fra Documents-mappen i
 5. gulpfile.js
 
 	Kopier innhold eller kopier fil. 
-	Knockout, pagerjs og jquery-navn må inn i bower-variabelen i 'copy'-tasken.
+	Dersom du ikke kopierier, så må Knockout, pagerjs og jquery-navn manuelt settes inn i bower-variabelen i 'copy'-tasken.
+
+
+
+
+
+
 
 Andre fil-endringer:
 
@@ -57,6 +65,8 @@ Andre fil-endringer:
                 Tweets = result.Results
             };
         }
+
+
 
 
 	b. Legg til Knockout, Pagerjs og jquery i bower.json:
