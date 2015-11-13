@@ -41,7 +41,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CopyFrontEnd", "CopyFrontEnd", "{FF6F67D2-2FF0-4A8C-B71C-7CD3C7FFABC2}"
 	ProjectSection(SolutionItems) = preProject
+		Documents\AzureSearchResult.cs = Documents\AzureSearchResult.cs
+		Documents\gulpfile.js = Documents\gulpfile.js
+		Documents\index.html = Documents\index.html
+		Documents\knockout.viewmodel.min.js = Documents\knockout.viewmodel.min.js
 		readme.txt = readme.txt
+		Documents\viewmodels.js = Documents\viewmodels.js
 	EndProjectSection
 EndProject
 Global
