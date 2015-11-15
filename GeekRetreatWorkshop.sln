@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{FBAFD70E-3334-4004-AD37-79560A8F5CAF}"
 	ProjectSection(SolutionItems) = preProject
+		..\Geek-Retreat-Github\.gitignore = ..\Geek-Retreat-Github\.gitignore
+
 		Documents\ASP.NET 5 Tutorial.pdf = Documents\ASP.NET 5 Tutorial.pdf
 		Documents\Azure Search - Del 1.pptx = Documents\Azure Search - Del 1.pptx
 		Documents\Azure Search - Del 2.pptx = Documents\Azure Search - Del 2.pptx
@@ -37,9 +39,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		Documents\Azure Tutorial.pdf = Documents\Azure Tutorial.pdf
 		Documents\Geek Retreat 2015 Intro.pptx = Documents\Geek Retreat 2015 Intro.pptx
 		Documents\GeekRetweat2015-hashtag.png = Documents\GeekRetweat2015-hashtag.png
+		readme.txt = readme.txt
 		Documents\Search Tutorial 1.docx = Documents\Search Tutorial 1.docx
 		Documents\Search Tutorial 2.docx = Documents\Search Tutorial 2.docx
 		Documents\tweetr-system.png = Documents\tweetr-system.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CopyFrontEnd", "CopyFrontEnd", "{FF6F67D2-2FF0-4A8C-B71C-7CD3C7FFABC2}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\AzureSearchResult.cs = Documents\AzureSearchResult.cs
+		Documents\gulpfile.js = Documents\gulpfile.js
+		Documents\index.html = Documents\index.html
+		Documents\knockout.viewmodel.min.js = Documents\knockout.viewmodel.min.js
+		readme.txt = readme.txt
+		Documents\viewmodels.js = Documents\viewmodels.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{85900B82-C55A-4723-9B00-A1E1D6DA62D2}"
@@ -80,6 +93,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{FF6F67D2-2FF0-4A8C-B71C-7CD3C7FFABC2} = {FBAFD70E-3334-4004-AD37-79560A8F5CAF}
 		{85900B82-C55A-4723-9B00-A1E1D6DA62D2} = {FBAFD70E-3334-4004-AD37-79560A8F5CAF}
 	EndGlobalSection
 EndGlobal

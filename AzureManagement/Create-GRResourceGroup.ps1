@@ -28,8 +28,8 @@ $deploymentStorageName = $groupname.ToLower() + "deployments"
 $hostingPlanName = $groupname + "HostingPlan"
 $websiteName = $groupname + "Web"
 	
-Switch-AzureMode -Name AzureResourceManager
-New-AzureResourceGroup -ErrorAction Stop -Name $resourceGroupName -Location "North Europe" -TemplateFile $templateFile `
+New-AzureRMResourceGroup -Name $resourceGroupName -Location "North Europe"
+New-AzureRMResourceGroupDeployment -ErrorAction Stop -ResourceGroupName $resourceGroupName -TemplateFile $templateFile `
 												-tweetPublishServiceName $tweetPublishServiceName `
 												-tweetHandlerServiceName $tweetHandlerServiceName `
 												-tweetHandlerStorageAccountName $storageAccountName `
