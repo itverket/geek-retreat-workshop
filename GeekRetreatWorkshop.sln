@@ -29,6 +29,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{FBAFD70E-3334-4004-AD37-79560A8F5CAF}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\ASP.NET 5 Tutorial.pdf = Documents\ASP.NET 5 Tutorial.pdf
+		Documents\Azure Search - Del 1.pptx = Documents\Azure Search - Del 1.pptx
+		Documents\Azure Search - Del 2.pptx = Documents\Azure Search - Del 2.pptx
+		Documents\Azure Search - Del 3.pptx = Documents\Azure Search - Del 3.pptx
+		Documents\Azure Tutorial.pdf = Documents\Azure Tutorial.pdf
+		Documents\Geek Retreat 2015 Intro.pptx = Documents\Geek Retreat 2015 Intro.pptx
+		Documents\GeekRetweat2015-hashtag.png = Documents\GeekRetweat2015-hashtag.png
+		Documents\Search Tutorial 1.docx = Documents\Search Tutorial 1.docx
+		Documents\Search Tutorial 2.docx = Documents\Search Tutorial 2.docx
+		Documents\tweetr-system.png = Documents\tweetr-system.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{85900B82-C55A-4723-9B00-A1E1D6DA62D2}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Data\Events\Fotball.csv = Documents\Data\Events\Fotball.csv
+		Documents\Data\Events\Nyheter.csv = Documents\Data\Events\Nyheter.csv
+		Documents\Data\Events\Politikk.csv = Documents\Data\Events\Politikk.csv
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,5 +78,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{85900B82-C55A-4723-9B00-A1E1D6DA62D2} = {FBAFD70E-3334-4004-AD37-79560A8F5CAF}
 	EndGlobalSection
 EndGlobal
